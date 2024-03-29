@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="Employee_Management.Master1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .Form-container{
+            height:100vh;
+            width:100%;
+            overflow:hidden;
+        }
+        header{
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid #404040;
+        }
+        .auto-style1 {
+            background-color: #FF0000;
+            color: #5C42FF;
+        }
+        .auto-style2 {
+            color: #FF0000;
+        }
+        body{
+            background-image:url('emp1.png');
+/*            background-position:center;*/
+            background-size:100%;
+            background-repeat:no-repeat;
+            background-position-y: 110px;
+            background-position-x: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="Form-container">
+            <header class="text-gray-600 body-font" style="background-color:#5c42ff; color:white;">
+                <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+                    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </a>
+                        <strong>Employee Management System</strong><a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"><span class="auto-style2"> </span>
+                    </a>
+                    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Home1.aspx">Home</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/New_Employee1.aspx">New Employee</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;<asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Search1.aspx">Search</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;<asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/All_Emp1.aspx">All Employee</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;<asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Edit1.aspx">Edit</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp; <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/ChngPass1.aspx">Change Password</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp; <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/NewAdmin1.aspx">Add New Admin</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </nav>
+                    
+                        <strong>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                    </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                        <asp:Button ID="Button1" runat="server" Text=" LogOut " PostBackUrl="~/Login.aspx" CssClass="auto-style1" BackColor="White" BorderColor="Black"  />
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                   
+                    <br />
+                    <br />
+
+                    <br />
+                </div>
+            </header>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
